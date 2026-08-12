@@ -8,6 +8,12 @@ import { startFireworks } from "./fireworks.js";
 export function triggerCakeSequence() {
     console.log("🎂 Cake Sequence Started");
 
+    // 🎁 കേക്ക് സീൻ സ്റ്റാർട്ട് ചെയ്യുമ്പോൾ ഗിഫ്റ്റ് ബോക്സ് Hide ചെയ്യുന്നു
+    const giftBox = document.getElementById("giftBox") || document.querySelector(".gift-box") || document.querySelector(".gift");
+    if (giftBox) {
+        giftBox.style.display = "none";
+    }
+
     const cake = document.getElementById("cakeContainer");
     const flame = document.getElementById("cakeFlame");
     const message = document.getElementById("finalMessage");
