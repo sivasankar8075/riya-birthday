@@ -245,7 +245,7 @@
     transition: transform 0.8s ease-out !important;
 }
 
-//* Balloon Z-Index Fix (Curtains-ന് മുകളിൽ വരാൻ) */
+
 #balloonContainer, 
 .balloon-container {
     position: fixed !important;
@@ -253,8 +253,16 @@
     left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
-    z-index: 105 !important; /* Curtains-ന്റെ z-index 100-ന് മുകളിൽ വരാൻ */
+    z-index: 500 !important; /* Curtains-ന് മുകളിലായി ഫോണിൽ വ്യക്തമായി കാണാൻ */
     pointer-events: none !important;
+}
+
+/* Poppers Confetti Styling */
+.confetti-particle {
+    position: fixed !important;
+    z-index: 1000 !important;
+    pointer-events: none !important;
+    border-radius: 2px !important;
 }
 
 /* Final Message Glow Styling */
@@ -268,4 +276,27 @@
     font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
     color: #ffffff !important;
     text-shadow: 0 0 15px #ff4fa3, 0 0 30px #ff0055 !important;
+}
+
+/* Translucent Glass Box for Romantic Malayalam Note */
+.romantic-note-box {
+    width: min(90%, 550px);
+    margin: 18px auto 10px auto;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(255, 79, 163, 0.2);
+    text-align: center;
+}
+
+.malayalam-note-text {
+    font-size: clamp(0.95rem, 2.8vw, 1.15rem);
+    line-height: 1.7;
+    color: #fff0f6;
+    font-weight: 400;
+    text-shadow: 0 0 8px rgba(255, 79, 163, 0.5);
+    min-height: 50px;
 }
