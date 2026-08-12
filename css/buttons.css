@@ -1,0 +1,131 @@
+/* =====================================================
+   Project Riya ❤️
+   3D Gift Box & Drop Animations
+===================================================== */
+
+/* Flash Screen Layer */
+.flash-screen {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, #fff7b8, #ffd700, #000);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+.flash-screen.flash {
+    animation: flash 0.7s forwards;
+}
+
+@keyframes flash {
+    0% { opacity: 0; }
+    40% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* 3D Gift Main Container Drop Position */
+.gift-drop {
+    position: fixed;
+    left: 50%;
+    top: -220px;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+
+/* Drop Animation */
+.gift-drop.drop {
+    animation: giftDrop 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes giftDrop {
+    0% { top: -220px; }
+    85% { top: 60%; }
+    100% { top: 55%; }
+}
+
+/* Shake Animation */
+.gift-drop.shake {
+    animation: giftShake 0.6s ease-in-out 2;
+}
+
+@keyframes giftShake {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    25% { transform: translateX(-55%) rotate(-8deg); }
+    50% { transform: translateX(-45%) rotate(8deg); }
+    100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+/* -----------------------------------------------------
+   3D Gift Box Structure & Design
+----------------------------------------------------- */
+
+.gift-box {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+}
+
+.gift-body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff4fa3, #ff2a8d);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(255, 79, 163, 0.5), inset 0 -5px 0 rgba(0,0,0,0.15);
+}
+
+.gift-lid {
+    position: absolute;
+    top: -18px;
+    left: -10px;
+    width: 160px;
+    height: 35px;
+    background: #ff65b3;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    z-index: 3;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Lid Open Animation Target */
+.gift-lid.open {
+    animation: lidOpen 0.9s ease forwards;
+}
+
+@keyframes lidOpen {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+    40% {
+        transform: translateY(-20px) rotate(-8deg) scale(1.02);
+    }
+    100% {
+        transform: translateY(-120px) rotate(25deg) scale(1.08);
+        opacity: 0;
+    }
+}
+
+/* Ribbons Styling */
+.gift-ribbon-v {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 100%;
+    background: #ffd166;
+    z-index: 2;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.gift-ribbon-h {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 26px;
+    background: #ffd166;
+    z-index: 2;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}

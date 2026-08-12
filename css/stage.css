@@ -1,0 +1,33 @@
+/* =====================================================
+   Birthday Stage Styles
+===================================================== */
+
+.birthday-stage {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #2c1654 0%, #0c0517 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.birthday-stage.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.stage-spotlight {
+    position: absolute;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), transparent);
+    clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
+    pointer-events: none;
+}

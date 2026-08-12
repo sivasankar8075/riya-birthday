@@ -1,0 +1,18 @@
+/* =====================================================
+   White Flash Transition
+===================================================== */
+
+.flash-screen, .flash-transition {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    z-index: 20000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.45s ease-in-out;
+}
+
+.flash-screen.flash, .flash-transition.show {
+    opacity: 1;
+    pointer-events: auto;
+}

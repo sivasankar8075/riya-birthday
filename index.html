@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ Happy Birthday Riya ❤️</title>
+    <meta name="theme-color" content="#ff4fa3">
+    <meta name="description" content="A Special Birthday Gift For Riya ❤️">
+
+    <!-- Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/gift.css">
+    <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/flashTransition.css">
+    <link rel="stylesheet" href="css/stage.css">
+    <link rel="stylesheet" href="css/cake.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Background Visual Overlays -->
+    <div class="stars"></div>
+    <div id="hearts"></div>
+    <div id="sparkles"></div>
+    <div id="cursor-glow"></div>
+
+    <!-- ==========================================
+         1. LOADING SCREEN
+    =========================================== -->
+    <section id="loading-screen">
+        <div class="loader">
+            <div class="heartbeat">❤️</div>
+            <h2>Loading Love...</h2>
+            <p>Preparing Something Beautiful...</p>
+            <div class="loading-bar">
+                <div class="loading-fill"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         2. HERO SECTION
+    =========================================== -->
+    <section class="section hero" id="hero">
+        <div class="glass hero-card">
+            <h1 class="hero-title">
+                <span id="typing-title"></span>
+            </h1>
+            <p class="hero-sub">
+                I made something...<br><br>Only for you ❤️
+            </p>
+            <button id="startBtn" class="love-btn heartbeat">
+                💖 Touch My Heart 💖
+            </button>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         3. LOVE LETTER
+    =========================================== -->
+    <section class="section hidden" id="letter">
+        <div class="glass">
+            <h2 class="letter-title">💌 Dear Riya ❤️</h2>
+            <p id="letterContent" class="letter-text"></p>
+            <button id="nextBtn" class="love-btn">Continue ❤️</button>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         4. MEMORY SECTION
+    =========================================== -->
+    <section class="section hidden" id="memory">
+        <div class="glass">
+            <h2 id="memoryTitle">Our Memories ❤️</h2>
+            <img id="memoryImage" src="assets/photos/memories/1.jpg" alt="Memory">
+            <p id="memoryCaption">Our beautiful memories...</p>
+            <button id="memoryNext" class="love-btn">Next Memory ❤️</button>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         5. GALLERY SECTION
+    =========================================== -->
+    <section class="section hidden" id="gallery">
+        <div class="glass">
+            <h2 class="letter-title">📸 Our Beautiful Moments ❤️</h2>
+            <div id="galleryGrid" class="gallery-grid"></div>
+            <button id="galleryNext" class="love-btn">Continue ❤️</button>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         6. REASONS SECTION
+    =========================================== -->
+    <section class="section hidden" id="reasons">
+        <div class="glass">
+            <h2 class="letter-title">❤️ Reasons Why I Love You ❤️</h2>
+            <div id="reasonBox" class="reason-box">
+                You make my world brighter every single day.
+            </div>
+            <button id="reasonNext" class="love-btn">Next ❤️</button>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         7. PHOTO RAIN CANVAS
+    =========================================== -->
+    <section class="section hidden" id="photoRain">
+        <canvas id="photoCanvas"></canvas>
+    </section>
+
+    <!-- ==========================================
+         ANIMATED OVERLAYS & STAGE
+    =========================================== -->
+
+    <!-- Falling 3D Gift Box -->
+    <div id="giftDrop" class="gift-drop hidden">
+        <div class="gift-box">
+            <div class="gift-lid"></div>
+            <div class="gift-ribbon-v"></div>
+            <div class="gift-ribbon-h"></div>
+            <div class="gift-body"></div>
+        </div>
+    </div>
+
+    <!-- Flash Screens -->
+    <div id="flashScreen" class="flash-screen hidden"></div>
+    <div id="flashTransition" class="flash-transition hidden"></div>
+
+    <!-- Final Birthday Stage Container -->
+    <div id="birthdayStage" class="birthday-stage hidden">
+        <div class="stage-floor"></div>
+        <div class="stage-spotlight"></div>
+
+        <!-- Animated Cake & Candle -->
+        <div class="cake-container" id="cakeContainer">
+            <div class="candle">
+                <div class="flame" id="cakeFlame"></div>
+            </div>
+            <div class="cake-tier tier-top"></div>
+            <div class="cake-tier tier-bottom"></div>
+            <div class="cake-stand"></div>
+        </div>
+
+        <!-- Final Message -->
+        <div class="final-message" id="finalMessage">
+            <h1 class="glow-text">Happy Birthday Riya ❤️</h1>
+            <p class="sub-text">Thank you for making every moment so magical!</p>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+   <audio id="bgMusic" src="assets/music/happy-birthday.mpeg" preload="auto" loop></audio>
+    <!-- Main Entry Module -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

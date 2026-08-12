@@ -1,0 +1,26 @@
+/* =====================================================
+   Golden Particle Burst
+===================================================== */
+
+.gold-particle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #ffe885 0%, #ffd166 100%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10001;
+    box-shadow: 0 0 10px #ffd166, 0 0 20px #ff9800;
+    animation: particleBurst linear forwards;
+}
+
+@keyframes particleBurst {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--x), var(--y)) scale(0);
+    }
+}

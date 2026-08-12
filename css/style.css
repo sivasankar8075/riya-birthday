@@ -1,0 +1,300 @@
+/* =====================================================
+   Project Riya ❤️
+   Master Stylesheet (Cleaned & Optimized)
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap');
+
+:root {
+    --bg: #05030b;
+    --bg-dark: #07040F;
+    --pink: #ff4fa3;
+    --pink-light: #ff82c5;
+    --purple: #8a5cff;
+    --gold: #ffd166;
+    --white: #ffffff;
+    --text: #f5f5f5;
+    --glass: rgba(255, 255, 255, .08);
+    --border: rgba(255, 255, 255, .15);
+    --radius: 30px;
+    --shadow: 0 25px 70px rgba(0, 0, 0, .45);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b0913;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--pink), var(--purple));
+    border-radius: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.glass {
+    position: relative;
+    width: min(92%, 1100px);
+    min-height: 650px;
+    margin: auto;
+    padding: 80px 70px;
+    border-radius: 35px;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .15);
+    backdrop-filter: blur(25px);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, .10), rgba(255, 255, 255, .02));
+    pointer-events: none;
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 30px;
+    background: linear-gradient(rgba(7, 4, 15, .72), rgba(7, 4, 15, .82)), url("../assets/photos/cover/cover.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero-title {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(4rem, 8vw, 7rem);
+    color: #ffffff;
+    line-height: 1.2;
+    text-shadow: 0 0 15px #ff4fa3, 0 0 40px #ff4fa3, 0 0 80px rgba(255, 79, 163, .45);
+}
+
+.hero-sub {
+    margin-top: 30px;
+    max-width: 700px;
+    font-size: 1.35rem;
+    line-height: 2;
+    color: #ffe8f4;
+}
+
+.love-btn {
+    margin-top: 45px;
+    padding: 20px 55px;
+    border-radius: 60px;
+    background: linear-gradient(135deg, #ff4fa3, #8a5cff);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: .35s;
+    box-shadow: 0 0 30px rgba(255, 79, 163, .45);
+}
+
+.love-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 55px rgba(255, 79, 163, .75);
+}
+
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #05030b;
+    z-index: 99999;
+    transition: opacity 1s ease;
+}
+
+.loader {
+    text-align: center;
+}
+
+.loader .heartbeat {
+    font-size: 90px;
+}
+
+.loading-bar {
+    width: 280px;
+    height: 10px;
+    margin-top: 35px;
+    border-radius: 30px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, .12);
+}
+
+.loading-fill {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #ff4fa3, #8a5cff);
+    animation: loadingBar 3s linear forwards;
+}
+
+#hearts, #sparkles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.letter-title {
+    font-family: "Great Vibes", cursive;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 0 20px #ff4fa3;
+}
+
+.letter-text {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.35rem;
+    line-height: 2.2;
+    color: #ffe8f4;
+    white-space: pre-line;
+}
+
+#memoryImage {
+    width: 100%;
+    max-width: 650px;
+    display: block;
+    margin: 40px auto;
+    border-radius: 25px;
+    border: 3px solid rgba(255, 255, 255, .12);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 2px solid rgba(255, 255, 255, .12);
+    transition: .4s;
+}
+
+.reason-box {
+    max-width: 750px;
+    margin: 45px auto;
+    padding: 45px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .10);
+    color: #ffe8f4;
+    font-size: 1.4rem;
+    line-height: 2;
+}
+
+#photoRain {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .18);
+    z-index: 9999;
+}
+
+.rain-photo {
+    position: absolute;
+    top: -250px;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
+    pointer-events: none;
+    animation-name: photoRain;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loadingBar {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+@keyframes photoRain {
+    0% { transform: translateY(-250px) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(120vh) rotate(720deg); opacity: 0; }
+}
+
+.heartbeat {
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    20% { transform: scale(1.12); }
+    40% { transform: scale(.95); }
+    60% { transform: scale(1.18); }
+}
