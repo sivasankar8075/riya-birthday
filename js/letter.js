@@ -27,7 +27,7 @@ Happy Birthday My Princess ❤️
 
     // 2. ലൈവ് സമയം കണക്കാക്കുന്ന ഫംഗ്ഷൻ
     function updateCounter() {
-        const startDate = new Date("2024-01-08T00:00:00");
+        const startDate = new Date("2023-01-08T00:00:00");
         const now = new Date();
 
         let years = now.getFullYear() - startDate.getFullYear();
