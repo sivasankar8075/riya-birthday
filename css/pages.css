@@ -245,28 +245,27 @@
     transition: transform 0.8s ease-out !important;
 }
 
-/* 4. Swaying Side Balloons (കാറ്റത്ത് ആടുന്ന ബലൂണുകൾ) */
-#balloonContainer {
+//* Balloon Z-Index Fix (Curtains-ന് മുകളിൽ വരാൻ) */
+#balloonContainer, 
+.balloon-container {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
-    z-index: 90 !important;
+    z-index: 105 !important; /* Curtains-ന്റെ z-index 100-ന് മുകളിൽ വരാൻ */
     pointer-events: none !important;
 }
 
-.balloon {
-    position: absolute !important;
-    bottom: -100px !important;
-    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60% !important;
-    animation: floatAndSway 7s ease-in-out infinite !important;
+/* Final Message Glow Styling */
+.final-message {
+    margin-top: 15px !important;
+    text-align: center;
 }
 
-@keyframes floatAndSway {
-    0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
-    25% { transform: translateY(-30vh) rotate(-12deg); }
-    50% { transform: translateY(-60vh) rotate(12deg); }
-    75% { transform: translateY(-90vh) rotate(-8deg); }
-    100% { transform: translateY(-120vh) rotate(5deg); opacity: 0; }
+.glow-text {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 15px #ff4fa3, 0 0 30px #ff0055 !important;
 }

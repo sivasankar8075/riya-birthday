@@ -31,7 +31,7 @@ export function triggerCakeSequence() {
         }
     }, 1000);
 
-    // 4. Cake Cutting Sequence Start
+    // 4. Cake Cutting Sequence Start (2.2 സെക്കൻഡിൽ)
     setTimeout(() => {
         performCakeCut();
     }, 2200);
@@ -45,27 +45,28 @@ function performCakeCut() {
     const message = document.getElementById("finalMessage");
     const banner = document.getElementById("stageBanner");
 
-    // ലൈൻ താഴേക്ക് വന്ന് കേക്ക് കട്ടാക്കുന്നു
+    // 1. ലൈൻ താഴേക്ക് വന്ന് കേക്ക് വെട്ടുന്നു
     if (cutLine) cutLine.classList.add("cutting");
 
     setTimeout(() => {
+        // കേക്ക് രണ്ടു വശത്തേക്ക് ചെറിയ രീതിയിൽ വേർപെടുന്നു
         if (topTier) topTier.classList.add("cut-left");
         if (bottomTier) bottomTier.classList.add("cut-right");
 
-        // 🎉 കേക്ക് കട്ടാകുമ്പോൾ പാർട്ടി പോപ്പേഴ്സും ഫയർവർക്സും പൊട്ടുന്നു!
+        // 🎉 വെട്ടുന്ന അതേ നിമിഷം പാർട്ടി പോപ്പേഴ്സും ഫയർവർക്സും പൊട്ടുന്നു!
         triggerPartyPoppers();
         startFireworks();
 
-        // 🎆 പോപ്പേഴ്സ് പൊട്ടിയ ശേഷമേ "Happy Birthday Riya" കാണിക്കൂ
+        // 2. പോപ്പേഴ്സ് പൊട്ടിയ ശേഷമേ "Happy Birthday Riya" ബാനറും മെസ്സേജും കാണിക്കൂ!
         setTimeout(() => {
             if (banner) banner.style.display = "block";
             if (message) message.style.opacity = "1";
-        }, 400);
+        }, 300);
 
     }, 600);
 }
 
-// 🎈 കാറ്റത്ത് ആടുന്ന വശങ്ങളിലെ ബലൂണുകൾ:
+// 🎈 ബലൂണുകൾ കർട്ടന് തൊട്ടരികിൽ സ്റ്റേജിൽ തെളിഞ്ഞു പൊങ്ങാൻ:
 function createSwayingBalloons() {
     const container = document.getElementById("balloonContainer");
     if (!container) return;
@@ -73,7 +74,7 @@ function createSwayingBalloons() {
 
     const colors = ["#ff4fa3", "#ffb700", "#ff0055", "#e60073", "#ffd700"];
 
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < 20; i++) {
         const balloon = document.createElement("div");
         balloon.className = "balloon";
 
@@ -81,8 +82,9 @@ function createSwayingBalloons() {
         balloon.style.width = `${size}px`;
         balloon.style.height = `${Math.floor(size * 1.25)}px`;
 
+        // Left Stage Area (16%-26%) & Right Stage Area (74%-84%)
         const isLeft = Math.random() < 0.5;
-        const leftPos = isLeft ? Math.random() * 13 + 2 : Math.random() * 13 + 82;
+        const leftPos = isLeft ? Math.random() * 10 + 16 : Math.random() * 10 + 74;
         balloon.style.left = `${leftPos}%`;
 
         const color = colors[Math.floor(Math.random() * colors.length)];
