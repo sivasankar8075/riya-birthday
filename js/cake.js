@@ -4,6 +4,7 @@
 // =====================================================
 
 import { startFireworks } from "./fireworks.js";
+import { initDecorations, triggerPoppers } from "./decorations.js"; // 🎈 ബലൂണും പോപ്പേഴ്സും Import ചെയ്യുന്നു
 
 export function triggerCakeSequence() {
     console.log("🎂 Cake Sequence Started");
@@ -13,6 +14,9 @@ export function triggerCakeSequence() {
     if (giftBox) {
         giftBox.style.display = "none";
     }
+
+    // 🎈 ബലൂണുകൾ ക്രിയേറ്റ് ചെയ്യുന്നു
+    initDecorations();
 
     const cake = document.getElementById("cakeContainer");
     const flame = document.getElementById("cakeFlame");
@@ -33,7 +37,8 @@ export function triggerCakeSequence() {
             message.classList.add("show");
         }
 
-        // 🎆 Final Message വരുമ്പോൾ താനേ Fireworks സ്റ്റാർട്ട് ആകുന്നു!
+        // 🎉 കേക്കും മെസ്സേജും വരുമ്പോൾ Fireworks-നൊപ്പം Party Poppers-ഉം പൊട്ടുന്നു!
+        triggerPoppers();
         startFireworks();
     }, 2500);
 }
