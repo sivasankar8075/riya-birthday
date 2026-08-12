@@ -17,9 +17,6 @@ import { initMusic } from "./music.js";
 import { initSparkles } from "./sparkles.js";
 import { startPhotoRain } from "./photoRain.js";
 
-// DOMContentLoaded ഫങ്ഷനുള്ളിൽ ചേർക്കുക:
-initCursor();
-
 window.addEventListener("DOMContentLoaded", () => {
     console.clear();
     console.log("❤️ Project Riya Main Engine Started");
@@ -33,7 +30,6 @@ window.addEventListener("DOMContentLoaded", () => {
     initLetter();
     initMemory();
     initGallery();
-    // DOMContentLoaded ഫങ്ഷനുള്ളിൽ ചേർക്കുക:
     initCursor();
     initEasterEggs();
     initMusic();
